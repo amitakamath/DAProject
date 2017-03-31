@@ -117,11 +117,11 @@ function process_room_state(data) {
 		var browser_color = 'red';
 		if ((browser_name == "chrome" || browser_name == "firefox") && (data.browser == "chrome" || data.browser == "firefox")) { browser_color = 'green'; }
 		
-		if (data.encryption == "NONE") {
-			$("#room_state").append('This room already exists and the creator used:<br /> <span style="color:'+browser_color+'">'+ sanitize(data.browser) + '</span> <span style="color:'+browser_color+'">' + sanitize(data.browserVer) + '</span> without OTR.<br /><br />');
-		} else {
-			$("#room_state").append('This room already exists and the creator used:<br /> <span style="color:'+browser_color+'">'+ sanitize(data.browser) + '</span> <span style="color:'+browser_color+'">' + sanitize(data.browserVer) + '</span> with OTR encryption.<br /><br />');
-		}
+		// if (data.encryption == "NONE") {
+		// 	$("#room_state").append('This room already exists and the creator used:<br /> <span style="color:'+browser_color+'">'+ sanitize(data.browser) + '</span> <span style="color:'+browser_color+'">' + sanitize(data.browserVer) + '</span> without OTR.<br /><br />');
+		// } else {
+		// 	$("#room_state").append('This room already exists and the creator used:<br /> <span style="color:'+browser_color+'">'+ sanitize(data.browser) + '</span> <span style="color:'+browser_color+'">' + sanitize(data.browserVer) + '</span> with OTR encryption.<br /><br />');
+		// }
 		
 		/* set the dropdown box to default to the encryption value */
 		$("#encryption_type").val(data.encryption);
@@ -136,8 +136,10 @@ function process_room_state(data) {
 /* handles the transition from the username prompt to main screen prompt */
 function transition_from_username_to_main() {
 	username = document.getElementById("username").value;
-	encryption_type = document.getElementById("encryption_type").value;
-	encryption_key = document.getElementById("encryption_key").value;
+	// encryption_type = document.getElementById("encryption_type").value;
+	// encryption_key = document.getElementById("encryption_key").value;
+	encryption_type = "NONE";
+	encryption_key = "";
 	
 	/* clear out any warnings that may have popped up previously */
 	$("#alerts").empty();
