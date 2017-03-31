@@ -4,7 +4,7 @@
 	
 ****************/
 
-var ROOM_TITLE = "Crypto Chat - Room "; /* constant - room title bar string */
+var ROOM_TITLE = "Chat Room "; /* constant - room title bar string */
 
 /* your username */
 var username = "";
